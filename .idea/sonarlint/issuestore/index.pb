@@ -1,0 +1,41 @@
+
+@
+build.gradle.kts,d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d
+S
+#src/main/java/org/example/Main.java,0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b
+i
+9src/main/java/org/example/FairCalculationApplication.java,8/1/81689e195c4eb33fdfefc7e3c02dbc2809f7a754
+_
+/src/main/java/org/example/model/TapDetails.java,f/d/fdee3a10447e51299ca8b5542ea00d5c249020ae
+_
+/src/main/java/org/example/model/TripDetail.java,9/f/9ff07eaa4183622f421ffa644cd4a5b1c971965a
+l
+<src/main/java/org/example/service/FareCalculatorService.java,b/c/bcf91d393dc16ce318b99505c775a50633d1e49e
+[
++src/main/java/org/example/util/CsvUtil.java,8/3/835915109c17493522bb470499ae1006b47bca8c
+h
+8src/main/java/org/example/FareCalculatorApplication.java,e/b/ebe5e987826a9eba9de9d856bcf409a2232872be
+7
+gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
+;
+gradlew.bat,2/a/2a45a911a8f1836b0b6c5b758962572012d8f8c3
+9
+	.sdkmanrc,3/a/3aefdb2b91ba1bd8fedf4386683c651a20b41eeb
+9
+	trips.csv,6/4/646251c4937bf63e57e591e101c7c1c64b97cb32
+9
+	Readme.md,0/c/0c1945d7443c2e154bd3e421c0d438bd4086d8c3
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+X
+(src/main/java/org/example/model/Tap.java,b/f/bf47051c291038c55cd840632d2799b0f7619fe3
+Y
+)src/main/java/org/example/model/Trip.java,5/8/584b86e77448de2c7831cd3a6783851069d124cd
+j
+:src/main/java/org/example/service/FareCalculatorServiceNew,b/8/b8ef133e24e8e90b83833225945517527407ff74
+o
+?src/main/java/org/example/service/FareCalculatorServiceNew.java,9/f/9f1c94754fe65b124854eec354fe8dca77359f3f
+[
++src/main/java/org/example/service/Trip.java,a/5/a5374d1858c249b0a40d1cba1f8e43f85bab39c6
+s
+Csrc/test/java/org/example/service/FareCalculatorServiceNewTest.java,e/8/e829a92ef53c0a21131be4ebed5ac584f7ffff2e
