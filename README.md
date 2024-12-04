@@ -65,12 +65,12 @@ As part of your solution:
 
 ## Execution
 1. First, clone the repository from GitHub to your local machine using git clone:
-  git clone https://github.com/parul6/littlepay-coding_exercise
+  ```git clone https://github.com/parul6/littlepay-coding_exercise.git```
 2. Navigate to project directory
 
-   cd littlepay-coding_exercise
+   ```cd littlepay-coding_exercise```
 3. Ensure gradle is installed with the command gradle -v
-4. Build the project using ./gradlew build, On windows use gradlew.bat build
+4. Build the project using ```./gradlew build```, On windows use gradlew.bat build.
 5. Run the application using command ./gradlew run
 6. After running the application output .csv file will be generated at path "littlepay-coding_exercise/build/output" 
    with the name trips.csv.
