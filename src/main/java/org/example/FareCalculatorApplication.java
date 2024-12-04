@@ -6,7 +6,6 @@ import java.util.List;
 import org.example.model.Tap;
 import org.example.model.Trip;
 import org.example.service.FareCalculatorService;
-import org.example.service.FareCalculatorServiceNew;
 import org.example.util.CsvUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +15,6 @@ public class FareCalculatorApplication {
 
 	public static void main(String[] args) throws IOException {
 		String inputFile = "src/main/resources/taps.csv";
-//		String outputFile = "trips.csv";
-		//TODO should keep under configurable output dir of build/output directory
 		File outputDir = new File("build/output");
 		if (!outputDir.exists()) {
 			outputDir.mkdirs();
@@ -26,9 +23,10 @@ public class FareCalculatorApplication {
 		String outputFile = "build/output/trips.csv";
 		logger.info("Reading input file");
 		List<Tap> tapRecords = CsvUtil.readTapRecords(inputFile);
+
 		logger.info("Processing input file");
-		List<Trip> trips = FareCalculatorServiceNew.processTrips(tapRecords);
-		logger.info("Processing input file completed"); //TODO should add timestamp here
+		List<Trip> trips = FareCalculatorService.processTrips(tapRecords);
+		logger.info("Processing input file completed");
 
 		logger.info("Writing Trip details to output file");
 		CsvUtil.writeTripsToFile(trips, outputFile );
