@@ -54,7 +54,7 @@ public class CsvUtil {
 		);
 	}
 
-	private static boolean validateTapLine(String line) {
+	public static boolean validateTapLine(String line) {
 		if (line == null || line.trim().isEmpty()) {
 			logger.warn("Skipping empty line");
 			return false; // Indicate the line is invalid

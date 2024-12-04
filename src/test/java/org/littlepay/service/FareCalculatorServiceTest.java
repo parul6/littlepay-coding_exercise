@@ -198,11 +198,10 @@ void testCreateTrip_Completed() {
 	}
 
 	@Test
-	void testProcessTapGroupNoOffTap() {
+	void testProcessTapGroupWithIncomplete() {
 		// Setup: "ON" taps without corresponding "OFF" taps
 		List<Tap> tapGroup = Arrays.asList(
-				new Tap(1, LocalDateTime.now(), "ON", "Stop1", "Company1", "Bus1", "1234567890"),
-				new Tap(2, LocalDateTime.now().plusMinutes(5), "ON", "Stop1", "Company1", "Bus1", "1234567890")
+				new Tap(1, LocalDateTime.now().plusMinutes(5), "ON", "Stop1", "Company1", "Bus1", "1234567890")
 		);
 
 		// Act
@@ -210,10 +209,10 @@ void testCreateTrip_Completed() {
 
 		// Assert
 		assertNotNull(trips, "The result should not be null");
-		assertEquals(2, trips.size(), "The number of trips should be 2");
+		assertEquals(1, trips.size(), "The number of trips should be 2");
 
 		// Check that the second trip is incomplete
-		Trip incompleteTrip = trips.get(1);
+		Trip incompleteTrip = trips.get(0);
 		assertEquals("INCOMPLETE", incompleteTrip.getStatus());
 		assertNull(incompleteTrip.getToStopId(), "Incomplete trip should have no 'toStop'");
 	}
@@ -239,6 +238,28 @@ void testCreateTrip_Completed() {
 		assertEquals("Bus1", cancelledTrip.getBusId());
 		assertEquals("Stop1", cancelledTrip.getFromStopId());
 		assertEquals("Stop1", cancelledTrip.getToStopId());
+	}
+
+
+	@Test
+	void testProcessTapGroupConsecutiveOnTap() {
+		// Setup: "ON" taps without corresponding "OFF" taps
+		List<Tap> tapGroup = Arrays.asList(
+				new Tap(1, LocalDateTime.now(), "ON", "Stop1", "Company1", "Bus1", "1234567890"),
+				new Tap(2, LocalDateTime.now().plusMinutes(5), "ON", "Stop1", "Company1", "Bus1", "1234567890"),
+				new Tap(3, LocalDateTime.now().plusMinutes(5), "OFF", "Stop2", "Company1", "Bus1", "1234567890")
+		);
+
+		// Act
+		List<Trip> trips = FareCalculatorService.processTapGroup(tapGroup);
+
+		// Assert
+		assertNotNull(trips, "The result should not be null");
+		assertEquals(1, trips.size(), "The number of trips should be 2");
+
+		// Check that the second trip is incomplete
+		Trip completedTrip = trips.get(0);
+		assertEquals("COMPLETED", completedTrip.getStatus());
 	}
 
 }

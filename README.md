@@ -61,7 +61,8 @@ As part of your solution:
   current implementation, however in my opinion in real time scenario we can potentially improve the system by 
   adding this condition say if time > 5 min then charge maximum fare based on business requirement decision.  
 - Assuming there is no Off without On, however this case can be handled for the INCOMPLETE trip. 
-- Assuming at a time there is one Tap On and Off, no consecutive Tap On and tap Off. 
+- For Consecutive tap on and off case, on scenario is handled, off is nt yet handled.
+- Column order of input file will be always same as referred in problem statement.
 
 ## Execution
 1. First, clone the repository from GitHub to your local machine using git clone:

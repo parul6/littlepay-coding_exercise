@@ -8,6 +8,7 @@ import java.util.Deque;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import org.littlepay.model.Tap;
 import org.littlepay.model.Trip;
@@ -40,8 +41,16 @@ public class FareCalculatorService {
 			if (!"ON".equals(tapOn.getTapType())) {
 				continue;
 			}
+			// Skip consecutive "ON" taps
+			while (!tapDeque.isEmpty() && "ON".equals(tapDeque.peek().getTapType())) {
+				tapDeque.poll(); // Remove consecutive "ON" tap
+			}
+
 			Tap tapOff = tapDeque.peek();
-			if (tapOn.getStopId().equals(tapOff != null ? tapOff.getStopId() : null)) {
+			if (Optional.ofNullable(tapOff)
+					.map(Tap::getStopId)
+					.filter(tapOn.getStopId()::equals)
+					.isPresent() && !tapOn.getTapType().equals(tapOff.getTapType())) {
 				trips.add(createTrip(tapOn, tapOff, "CANCELLED")); // Cancelled trip
 			}else if(tapOff != null && "OFF".equals(tapOff.getTapType())
 					&& tapOff.getBusId().equals(tapOn.getBusId())) {
