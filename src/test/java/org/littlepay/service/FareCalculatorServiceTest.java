@@ -1,13 +1,11 @@
-package org.example.service;
+package org.littlepay.service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import org.example.model.Tap;
-import org.example.model.Trip;
+import org.littlepay.model.Tap;
+import org.littlepay.model.Trip;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

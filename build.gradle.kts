@@ -2,11 +2,7 @@ plugins {
     id("application")
 }
 
-application {
-    mainClass = "org.example.FareCalculatorApplication"
-}
-
-group = "org.example"
+group = "org.littlepay"
 version = "1.0-SNAPSHOT"
 
 repositories {

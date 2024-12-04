@@ -1,4 +1,4 @@
-package org.example.util;
+package org.littlepay.util;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
-import org.example.model.Tap;
-import org.example.model.Trip;
+import org.littlepay.model.Tap;
+import org.littlepay.model.Trip;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

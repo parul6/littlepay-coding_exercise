@@ -1,4 +1,4 @@
-package org.example.model;
+package org.littlepay.model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

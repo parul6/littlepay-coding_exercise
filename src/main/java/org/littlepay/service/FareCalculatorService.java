@@ -1,4 +1,4 @@
-package org.example.service;
+package org.littlepay.service;
 
 import java.time.Duration;
 import java.util.ArrayDeque;
@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
-import org.example.model.Tap;
-import org.example.model.Trip;
-import org.example.util.Utility;
+import org.littlepay.model.Tap;
+import org.littlepay.model.Trip;
+import org.littlepay.util.Utility;
 
 public class FareCalculatorService {
 
